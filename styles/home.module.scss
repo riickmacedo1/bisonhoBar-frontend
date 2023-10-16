@@ -1,0 +1,48 @@
+.containerCenter {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--black);
+
+  .logo {
+    width: 300px;
+    height: 300px;
+  }
+
+  .login {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 1.5rem;
+
+    h3 {
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    form {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    form button {
+      height: 35px;
+    }
+
+    .text {
+      margin-top: 1rem;
+      color: var(--white);
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .login {
+    max-width: 90%;
+  }
+}
