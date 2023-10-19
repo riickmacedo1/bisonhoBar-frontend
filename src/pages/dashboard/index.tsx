@@ -1,8 +1,16 @@
+import { Header } from "../../components/Header";
+import Head from "next/head";
 
 export default function Dashboard() {
   return (
-    <div>
-      <h1>Bem vindo ao sistema</h1>
-    </div>
+    <>
+      <Head>
+        <title>Painel - Bar Bisonho</title>
+      </Head>
+
+      <div>
+        <Header />
+      </div>
+    </>
   );
 }

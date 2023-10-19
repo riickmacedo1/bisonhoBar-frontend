@@ -17,10 +17,12 @@
 
   --gray: ;
   --green: ;
-  --red: #ff3f4b;
+  --red: #f82432;
+  --red-dark: #a03038;
   --yellow: #eeb816;
-  --yellow-shop: #f09114;
+  --yellow-dark: #f09114;
   --green: #00ff5f;
+  --green-dark: #17a94c;
 
   --font-primary: #393333;
   --font-secondary: rgba(0, 0, 0, 0.6);
@@ -35,9 +37,9 @@ a {
   text-decoration: none;
 }
 
-/*body {
+body {
   background: var(--black);
-}*/
+}
 
 body,
 input,
