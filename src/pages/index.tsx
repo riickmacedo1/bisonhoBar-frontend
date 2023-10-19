@@ -2,6 +2,7 @@ import { useContext, FormEvent, useState, use } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import logo from "../../public/logo.png";
+import { toast } from "react-toastify";
 
 import { Input } from "../components/ui/Input";
 import { Button } from "../components/ui/Button";
@@ -21,12 +22,23 @@ export default function Home() {
   async function handleLogin(event: FormEvent) {
     event.preventDefault();
 
+    if (email === "" || password === "") {
+      toast.error("Preencha seu e-mail e senha :')", {
+        theme: "dark",
+      });
+      return;
+    }
+
+    setLoading(true);
+
     let data = {
       email,
       password,
     };
 
     await signIn(data);
+
+    setLoading(false);
   }
 
   return (
@@ -52,7 +64,7 @@ export default function Home() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Button type="submit" loading={false}>
+            <Button type="submit" loading={loading}>
               Acessar
             </Button>
           </form>

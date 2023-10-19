@@ -27,8 +27,10 @@
 @keyframes animate {
   from {
     transform: rotate(0deg);
+    color: var(--black);
   }
   to {
     transform: rotate(360deg);
+    color: var(--black);
   }
 }
