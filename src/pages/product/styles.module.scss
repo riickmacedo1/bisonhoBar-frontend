@@ -1,0 +1,114 @@
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border: 1px solid var(--green-dark);
+  border-radius: 3px;
+
+  h2 {
+    color: var(--white);
+    text-align: center;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+
+    .labelAvatar {
+      width: 100%;
+      height: 280px;
+      background-color: var(--black);
+      margin-bottom: 1rem;
+      border-radius: 3px;
+      border: 1px solid var(--green-dark);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      input {
+        display: none;
+      }
+
+      span {
+        z-index: 99;
+        position: absolute;
+        opacity: 0.7;
+        transition: all 0.5s;
+
+        &:hover {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+
+      .preview {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    select {
+      width: 100%;
+      margin-bottom: 1rem;
+      height: 35px;
+      border: 0;
+      border-radius: 5px;
+      padding: 0.5rem;
+      background-color: var(--font-secondary-black400);
+      color: var(--white);
+      border: 1px solid var(--green);
+      appearance: none;
+      background: url("../../../public/setaSelect.png") 98.5% 50% no-repeat;
+      cursor: pointer;
+
+      &:focus {
+        color: var(--white);
+        background-color: var(--black);
+      }
+    }
+
+    .input {
+      margin-bottom: 1rem;
+      height: 35px;
+      border: 0;
+      border-radius: 5px;
+      padding: 0.5rem;
+      background-color: var(--font-secondary-black400);
+      color: var(--white);
+      border: 1px solid var(--green);
+
+      &::placeholder {
+        color: var(--white);
+        font-size: 14px;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 100px;
+      resize: none;
+    }
+
+    .buttonAdd {
+      background-color: var(--green);
+      border: 0;
+      padding: 0.4rem;
+      color: var(--black);
+      border-radius: 0.4rem;
+      font-weight: 600;
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .container {
+    max-width: 90%;
+  }
+}

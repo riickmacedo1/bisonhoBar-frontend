@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useState, useEffect } from "react";
 import { destroyCookie, setCookie, parseCookies } from "nookies";
 import Router from "next/router";
 import { api } from "../services/apiClient";
@@ -47,6 +47,26 @@ export function signOut() {
 export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<UserProps>();
   const isAuthenticated = !!user;
+
+  useEffect(() => {
+    const { "@bisonhobar.token": token } = parseCookies();
+
+    if (token) {
+      api
+        .get("/userinfo")
+        .then((response) => {
+          const { id, name, email } = response.data;
+          setUser({
+            id,
+            name,
+            email,
+          })
+        })
+        .catch(() => {
+          signOut();
+        });
+    }
+  }, []);
 
   async function signIn({ email, password }: SignInProps) {
     try {

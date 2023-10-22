@@ -1,6 +1,5 @@
 .headerContainer {
   height: 5rem;
-  border: 1px solid black;
 
   .headerContent {
     max-width: 1120px;
@@ -24,8 +23,6 @@
 
         &:hover {
           color: var(--green);
-          border-bottom: 1px solid var(--green);
-          line-height: 11px;
         }
       }
 

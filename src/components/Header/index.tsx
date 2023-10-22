@@ -1,8 +1,13 @@
-import Link from "next/link";
+import { useContext } from "react";
 import styles from "./styles.module.scss";
+import Link from "next/link";
 import { RiLogoutCircleLine } from "react-icons/ri";
 
+import { AuthContext } from "../../contexts/AuthContext";
+
 export function Header() {
+  const { signOut } = useContext(AuthContext);
+
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
@@ -11,11 +16,11 @@ export function Header() {
         </Link>
 
         <nav>
-          <Link href="/category">Categoria</Link>
+          <Link href="/category">Categorias</Link>
 
-          <Link href="/product">Cardapio</Link>
+          <Link href="/product">Produtos</Link>
 
-          <button>
+          <button onClick={signOut}>
             <RiLogoutCircleLine size={24} />
           </button>
         </nav>

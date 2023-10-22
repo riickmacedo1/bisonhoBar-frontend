@@ -10,13 +10,9 @@
 
 :root {
   --white: #fff;
+  --white-dark: #ffffffaf;
   --black: #000;
 
-  --dark-900: ;
-  --dark-700: ;
-
-  --gray: ;
-  --green: ;
   --red: #f82432;
   --red-dark: #a03038;
   --yellow: #eeb816;
@@ -25,7 +21,7 @@
   --green-dark: #17a94c;
 
   --font-primary: #393333;
-  --font-secondary: rgba(0, 0, 0, 0.6);
+  --font-secondary: #00000099;
 }
 
 button {
@@ -37,8 +33,11 @@ a {
   text-decoration: none;
 }
 
+
+//AJUSTAR ISSO QUANDO FINALIZAR AS PAGES
 body {
   background: var(--black);
+  
 }
 
 body,
